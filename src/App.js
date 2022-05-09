@@ -1,9 +1,10 @@
-import React, { useState, UseState } from 'react'
-import { store } from './store'
+import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 const App = () => {
   const [task, updateTask] = useState('')
-  const [tasks, updateTasks] = useState([])
+  const dispatch = useDispatch()
+  const tasks = useSelector(state => state)
 
   const handleInputChange = (event) => {
     updateTask(event.target.value)
@@ -12,11 +13,11 @@ const App = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
-    store.dispatch({
+    dispatch({
       type: 'ADD_TASK',
       payload: task
     })
-
+    
     updateTask('')
   }
 

@@ -1,17 +1,5 @@
 import { createStore } from 'redux'
-
-const reducer = (state = [], action) => {
-    switch (action.type) {
-        case 'ADD_TASK':
-            return [
-                ...state,
-                action.payload
-            ]
-
-        default:
-            return state
-    }
-}
+import { reducer } from './reducers'
 
 const store = createStore(reducer)
 
