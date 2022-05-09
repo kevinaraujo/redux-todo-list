@@ -1,5 +1,7 @@
+import { type } from '@testing-library/user-event/dist/type'
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { actions } from './actions/todo'
 
 const App = () => {
   const [task, updateTask] = useState('')
@@ -13,11 +15,8 @@ const App = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
-    dispatch({
-      type: 'ADD_TASK',
-      payload: task
-    })
-    
+    dispatch(actions.AddTask(task))
+
     updateTask('')
   }
 

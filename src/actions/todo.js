@@ -1,7 +1,7 @@
-import { types } from '../types'
+import { types } from '../types/todo'
 
 const AddTask = task => ({
-    type: types.ADD_TASK,
+    type: types.TODO_ADD_TASK,
     payload: task
 })
 

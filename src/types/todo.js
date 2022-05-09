@@ -1,5 +1,5 @@
 const types = {
-    ADD_TASK: 'ADD_TASK',
+    TODO_ADD_TASK: 'TODO_ADD_TASK',
 }
 
 export { types }
