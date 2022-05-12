@@ -1,12 +1,8 @@
+import { createAction } from 'redux-actions'
 import { types } from '../types/todo'
 
-const AddTask = task => ({
-    type: types.TODO_ADD_TASK,
-    payload: task
-})
-
 const actions = {
-    AddTask
+    AddTask: createAction(types.TODO_ADD_TASK)
 }
 
 export { actions }

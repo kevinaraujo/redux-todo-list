@@ -1,18 +1,13 @@
 import { combineReducers } from 'redux'
-import { types } from '../types/todo'
+import { handleActions } from 'redux-actions'
+import { actions } from '../actions/todo'
 
-const tasks = (state = [], action) => {
-    switch (action.type) {
-        case types.TODO_ADD_TASK:
-            return [
-                ...state,
-                action.payload
-            ]
-
-        default:
-            return state
-    }
-}
+const tasks = handleActions({
+    [actions.AddTask]: (state, action) => [
+        ...state,
+        action.payload
+    ]
+}, [])
 
 const reducers = combineReducers({
     tasks
