@@ -1,6 +1,7 @@
+import { combineReducers } from 'redux'
 import { types } from '../types/todo'
 
-const reducer = (state = [], action) => {
+const tasks = (state = [], action) => {
     switch (action.type) {
         case types.TODO_ADD_TASK:
             return [
@@ -13,4 +14,8 @@ const reducer = (state = [], action) => {
     }
 }
 
-export { reducer }
+const reducers = combineReducers({
+    tasks
+})
+
+export { reducers }

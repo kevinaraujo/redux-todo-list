@@ -1,3 +1,8 @@
-import { reducer } from './todo'
+import { combineReducers } from 'redux'
+import { reducers as todoReducers } from './todo'
 
-export { reducer }
+const reducers = combineReducers({
+    todoReducers
+})
+
+export { reducers }
